@@ -147,7 +147,7 @@ abstract class AbstractItemNormalizer extends AbstractObjectNormalizer
      */
     protected function setAttributeValue($object, $attribute, $value, $format = null, array $context = [])
     {
-        $propertyMetadata = $this->propertyMetadataFactory->create($context['resource_class'], $attribute, $this->getFactoryOptions($context));
+        $propertyMetadata = $this->propertyMetadataFactory->create(get_class($object), $attribute, $this->getFactoryOptions($context));
         $type = $propertyMetadata->getType();
 
         if (null === $type) {
